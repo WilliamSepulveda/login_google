@@ -1,5 +1,6 @@
 import './App.css';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+import balon from './assets/soccer-balon.svg';
 
 function App() {
   const clientID = '401053425502-1dj22q7auik9d0vtamtb5j8o087ckd9r.apps.googleusercontent.com';
@@ -14,14 +15,26 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Autenticación con Google</h1>
-      <GoogleOAuthProvider clientId={clientID}>
-        <GoogleLogin
-          onSuccess={onSuccess}
-          onError={onError}
-          cookiePolicy={'single_host_origin'}
-        />
-      </GoogleOAuthProvider>
+      <div className="blurred-box">
+        <h2 className="title">Ingresa para empezar tu cambio</h2>
+        <div className="user-login-box">
+          <div className="user-icon">
+            <img src= {balon} className='balon' />
+          </div>
+        </div>
+        <GoogleOAuthProvider clientId={clientID}>
+          <div className="login-container">
+            <GoogleLogin
+              onSuccess={onSuccess}
+              onError={onError}
+              cookiePolicy={'single_host_origin'}
+              useOneTap
+              theme="filled_blue"
+              shape="pill"
+            />
+          </div>
+        </GoogleOAuthProvider>
+      </div>
     </div>
   );
 }
