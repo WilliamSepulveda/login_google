@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    max-width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    overflow-y: auto;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+  }
+  
+  .container h1 {
+    font-size: 1.8rem;
+    color: #ffffff;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: 0.5s;
+  }
+  
+  .nav a:hover {
+    font-size: 1.1rem;
+    color: greenyellow;
+  }
+  
+  .hero {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-content {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .portada {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .left {
+    left: 10px;
+  }
+  
+  .right {
+    right: 10px;
+  }
+  
+  .logo {
+    width: 50px;
+    filter: invert();
+  }
+  
+  .categories {
+    text-align: center;
+  }
+  
+  .categories h2 {
+    margin-top: 3vh;
+    font-size: 2rem;
+    color: transparent;
+    background: linear-gradient(90deg, greenyellow 50%, white 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 200%;
+    animation: loadingText 10s ease-in-out infinite;
+  }
+  
+  @keyframes loadingText {
+    0% {
+      background-position: 200% 0;
+    }
+    50% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 0% 100%;
+    }
+  }
+  
+  .featured-products {
+    margin-top: 3vh;
+  }
+  
+  .category-container,
+  .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .category-card,
+  .product-card {
+    flex: 1 1 calc(50% - 10px); /* Siempre 2 por fila */
+    max-width: 45%;
+    background-color: #1a1a1a;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .category-card:hover,
+  .product-card:hover {
+    transform: scale(1.05);
+    background-color: greenyellow;
+    color: black;
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 1024px) {
+    body {
+        min-height: 100vh;
+    }
+    .container h1 {
+      font-size: 1.6rem;
+    }
+  
+    .nav a {
+      font-size: 0.9rem;
+    }
+  
+    .category-card,
+    .product-card {
+      flex: 1 1 calc(10% - 20px);
+      max-width: 170px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    body {
+        min-height: 145vh;
+    }
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .container h1 {
+      font-size: 1.4rem;
+    }
+  
+    .nav {
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+  
+    .categories h2 {
+      font-size: 1.5rem;
+    }
+    .product-card img{
+        width: 100%;
+        height: auto;
+    }
+    .portada {
+      height: 200px;
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container h1 {
+      font-size: 1.2rem;
+    }
+  
+    .nav a {
+      font-size: 0.8rem;
+    }
+  
+    .category-container,
+    .product-container {
+      gap: 10px;
+    }
+  
+    .category-card,
+    .product-card {
+      flex: 1 1 calc(50% - 10px); 
+      max-width: calc(50% - 10px);
+    }
+    .hero-content img{
+        width: 100%;
+        height: auto;
+    }
+    .categories h2 {
+      font-size: 1.2rem;
+    }
+  
+    .portada {
+      height: 150px;
+    }
+  }
+  
