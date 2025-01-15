@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/login_google/', 
+  base: '/login_google/', // ruta de repo
 });
