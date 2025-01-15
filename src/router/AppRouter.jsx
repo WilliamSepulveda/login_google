@@ -4,7 +4,7 @@ import Products from '../components/productos.jsx';
 
 function MainRoutes() {
   return (
-    <Router>
+    <Router basename="/login_google">
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/productos" element={<Products />} />
